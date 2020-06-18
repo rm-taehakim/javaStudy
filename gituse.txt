@@ -1,0 +1,150 @@
+git 사용 방법
+
+------------------------------최초설정
+1. 로컬에 git 생성(초기화)
+git init
+
+2. 저장소 가져오기(repository) 
+git clone <url>.git
+ex) git clone https://github.com/rm-taehakim@gmail.com/javaStudy.git
+
+* clone을 하게 되면 init도 자동 설정
+
+------------------------------최초설정 이후는 3번부터 진행
+3. 상태확인
+git status
+
+* Untracked(빨간색) 파일 확인
+
+4. 저장소에 add (준비)
+모든파일 : git add . 
+지정파일 : git add <파일이름>.<확장자> ex)text.txt
+
+5. 상태확인
+git status
+
+* Tracked(초록색) 파일 확인
+* 여기서 add 취소하고 싶을 때
+모든파일 : git reset HEAD
+지정파일 : git reset HEAD <파일이름>.<확장자> ex)text.txt
+
+6. 저장소에 commit (확정)
+git commit -m "커밋 내용"
+ex) git commit -m "test"
+
+* 여기서 커밋내용 수정하고 싶을 때
+git commit --amend -m "커밋 내용"
+
+7. 저장소 확인
+git remote -v
+
+8. 저장소에 push (내보내기)
+git push <저장소이름> master
+ex) git push origin master
+
+* 저장소에 pull (가져오기)
+git pull <저장소이름> master
+
+
+
+
+
+------------------------------참고내용1
+- git config
+1. git config 확인
+git config --list
+
+2. git config user.nama /  user.email 설정 (global 설정)
+git config --global user.name "name"
+git config --global user.email "email"
+*** git config의 email은 github의 email정보와 같아야 함 ***
+
+3. git config user.nama /  user.email 삭제 (global 삭제)
+git config --unset --global user.name
+git config --unset --global user.email
+
+
+
+
+
+------------------------------참고내용2
+- git 저장소
+1. 저장소 확인
+git remote -v
+
+2. 저장소 추가
+git remote add <저장소이름> <url>.git
+ex) git remote add origin https://github.com/rm-taehakim@gmail.com/javaStudy.git
+
+3. 저장소 수정
+git remote set-url <저장소이름><변경할url>.git
+
+3. 저장소 삭제
+git remote remove <저장소이름>
+
+
+
+
+
+------------------------------참고내용3
+- commit, push 취소
+1. 커밋 목록 확인
+* git log
+지금까지 참조한 로그 목록 확인, q로 빠져나옴
+* git reflog
+지금까지 참조한 모든 로그 목록 확인 (git log로는 나오지 않는 commit, reset, clone 내용도 확인 가능)
+* git log -g
+화살표키를 이용하여 지금까지 참고한 모든 목록 상세 확인, q로 빠져나옴
+
+2. 되돌리기
+1) 마지막 작업
+* git reset --soft HEAD^ 
+add는 된 상태, 마지막 1개의 commit 취소, 로컬 파일 보존, reset 이후 commit부터 실행
+* git reset --mixed HEAD^ (기본 옵션, git reset HEAD^ 와 동일)
+add 취소, 마지막 1개의 commit 취소, 로컬 파일 보존, reset 이후 add부터 실행
+* git reset --hard HEAD^
+add 취소, 마지막 1개의 commit 취소, 로컬 파일 삭제
+
+2) 경로 지정
+* git reset --soft <파일번호>
+* git reset --soft HEAD@{번호}
+add는 된 상태, <파일번호>이후의 commit 모두 취소, 로컬 파일 보존, reset 이후 commit부터 실행
+* git reset --mixed <파일번호> (기본옵션, git reset <파일번호> 와 동일)
+* git reset --mixed HEAD@{번호}
+add 취소, <파일번호>이후의 commit 모두 취소, 로컬 파일 보존, reset 이후 commit부터 실행
+* git reset --hard <파일번호>
+* git reset --hard HEAD@{번호}
+add 취소, <파일번호>이후의 commit 모두 취소, 로컬 파일 삭제
+
+* git reset --hard HEAD
+저장소의 마지막 commit 상태로 로컬 변경
+
+3. 상태확인
+git status
+
+4. 저장소에 commit
+git commit -m "커밋 내용"
+
+5. 저장소 확인
+git remote -v
+
+6. 저장소에 push (내보내기)
+git push <저장소이름> master
+
+* push 에러날 경우 강제 내보내기 : git push <저장소이름> +master
+
+
+
+
+
+------------------------------참고내용4
+- 저장소 파일 삭제
+1. 저장소 파일만 삭제, 로컬 파일 보존
+* git rm --cached <파일이름>.<확장자>
+* git rm --cached <폴더이름>/<파일이름>.<확장자>
+init로 초기화 된 기본 경로 위치에서의 하위폴더 지정시에는 /를 사용하여 경로까지 정해 줌 
+* git rm --cached -r <폴더이름>/
+폴더이름의 하위의 모든 파일 삭제
+
+2. 저장소, 로컬 파일 모두 삭제
+git rm <파일이름>.<확장자>
