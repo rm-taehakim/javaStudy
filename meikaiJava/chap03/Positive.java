@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class Positive {
     
     /*
-    if문(if statement)
+    선택문(selection statement)
+    프로그램의 흐름을 분기시킴
+    if문(if statement), switch문(switch statement)
+    
 
     - if()문
     어떤 조건이 성립할 경우에만 실행해야 할 처리가 있으면 if문으로 구현
@@ -123,8 +126,8 @@ public class Positive {
             System.out.println("이 값은 양수");
         else if (d < 0)
             System.out.println("이 값은 음수");
-        else
-            System.out.println("이 값은 0");
+            else
+                System.out.println("이 값은 0");
         
         /*
 
