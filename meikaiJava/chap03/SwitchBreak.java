@@ -45,11 +45,11 @@ public class SwitchBreak {
         //switch문
         switch (hand) {
             case 0: System.out.println("가위"); 
-            break;
+                    break;
             case 1: System.out.println("바위");
-            break;
+                    break;
             case 2: System.out.println("보");
-            break;
+                    break;
 
         }
 
@@ -81,11 +81,11 @@ public class SwitchBreak {
 
         switch (m) {
             case 0: System.out.println("가위");
-            break;
+                    break;
             case 1: System.out.println("바위");
-            break;
+                    break;
             case 2: System.out.println("보");
-            break;
+                    break;
         }
 
 
@@ -97,21 +97,21 @@ public class SwitchBreak {
             case 12:
             case 1:
             case 2: System.out.println("겨울");
-            break;
+                    break;
             case 3:
             case 4:
             case 5: System.out.println("봄");
-            break;
+                    break;
             case 6:
             case 7:
             case 8: System.out.println("여름");
-            break;
+                    break;
             case 9:
             case 10:
             case 11: System.out.println("가을");
-            break;
+                    break;
             default: System.out.println("없는 월");
-            break;
+                    break;
         }
 
     }
