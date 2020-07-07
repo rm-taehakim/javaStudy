@@ -35,8 +35,7 @@ public class Season {
 
             System.out.print("다시 한 번? \n (1 = yes, 2 = no) : ");
             retry = sc.nextInt();
-        }
-        while (retry == 1);
+        } while (retry == 1);
 
 
     /*
@@ -52,8 +51,7 @@ public class Season {
         do {
             System.out.print("손을 선택 (1 = 가위, 2 = 바위, 3 = 보) : ");
             hand = sc.nextInt();
-        }
-        while (hand < 1 || hand > 3); // 연속조건
+        } while (hand < 1 || hand > 3); // 연속조건
         // do문에서 요구하는 값이 아닌 부정한 값(1,2,3 이외의 값) 일 경우 loop body 반복
 
         switch (hand) {
@@ -94,8 +92,7 @@ public class Season {
                 System.out.println("노노, 그것보다 작아");
             else if (x < no)
                 System.out.println("노노, 그것보다 커");
-        }
-        while (x != no); //종료조건의 부정을 사용하여 loop body 반복
+        } while (x != no); //종료조건의 부정을 사용하여 loop body 반복
 
         System.out.println("정답!");
     }
