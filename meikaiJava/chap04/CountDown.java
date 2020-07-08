@@ -114,6 +114,79 @@ public class CountDown {
 
         System.out.println("현재 z의 값 : " + z);
 
+    
+    /*
+    
+    - 문자 리터럴(character literal)
+    단일 문자를 '(작은 따옴표)'로 묶은 식
+    '*' : 단일문자 * 를 나타냄, char형
+    "*" : 문자 * 의 나열을 나타냄, String형
+
+
+    */
+        
+        System.out.println("몇 개의 *를 표시할까? : ");
+        int n = sc.nextInt();
+
+        int e = 0;
+        while (e < n) {
+            System.out.println('*');
+            e++;
+        }
+        System.out.println("e의 최종값 : " + e); // e = n
+
+        
+        int f = 0;
+        while (f <= n) {
+            System.out.println('*');
+            f++;
+        }
+        System.out.println("f의 최종값 : " + f); // f = n+1
+
+
+    /*
+
+    - while문과 do문의 구분
+    do문 : 후판정 반복 >>> loop body를 실행한 '후' 판정을 수행 (문은 반드시 한 번은 실행됨)
+    while문 : 선판정 반복 >>> loop body를 실행하기 '전' 판정을 수행 (문이 실행되지 않을 수도 있음)
+
+
+    * 참고 : do문의 loop body가 설령 단일문이라도 {} 를 사용하여 블록으로 해두는 게 좋음
+    
+    ex 1) do문과 while문의 구분이 어려움
+    x = 0;
+    do
+        x++;
+    while (x < 5);
+    while (x >= 0)
+        System.out.println(--x);
+
+    ex 2) do문과 while문의 구분이 쉬움
+    x = 0;
+    do {
+        x++;
+    } while (x < 5);
+    while (x >= 0)
+        System.out.println(--x);
+
+
+    */
+
+        
+        int m;
+        int g = 0;
+
+        do {
+            System.out.println("몇 개의 #를 표시할까 ? : ");
+            m = sc.nextInt();
+
+        } while (g > m);
+        while (g < m) {
+            System.out.println('#');
+            g++;
+        }
+        System.out.println("최종 g 값은 : " + g);
+
     }
     
 }
