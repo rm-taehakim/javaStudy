@@ -63,6 +63,7 @@ public class ReverseNo {
             i++; // i를 증가
         }
         System.out.println("1부터 " + n + "까지의 합은 " + sum);
+        System.out.println("최종 i의 값은 " + i); // n+1
 
 
     }
